@@ -1,0 +1,7 @@
+.DS_Store
+.dropbox
+.svn
+*~
+.*.swp
+.idea
+.vscode
