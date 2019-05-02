@@ -3,4 +3,4 @@
  :simlayers {:launch-mode {:key :o}
              :spacebar-mode {:key :spacebar}}
  :main [{:des "Change caps_lock to command+control+option+shift, but pressed alone it calls ESC."
-         :rules [[:##caps_lock :!SCTleft_option nil {:alone :escape}]]}
+         :rules [[:##caps_lock :!SCTleft_option nil {:alone :escape}]]}]}
