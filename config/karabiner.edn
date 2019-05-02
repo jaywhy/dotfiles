@@ -4,22 +4,3 @@
              :spacebar-mode {:key :spacebar}}
  :main [{:des "Change caps_lock to command+control+option+shift, but pressed alone it calls ESC."
          :rules [[:##caps_lock :!SCTleft_option nil {:alone :escape}]]}
-        {:des "launcher mode"
-         :rules [[:a [:open "Activity Monitor.app"] :launch-mode]
-                 [:spacebar [:open "Alfred 3.app"] :launch-mode]
-                 [:b [:open "Bear.app"] :launch-mode]
-                 [:f [:open "Finder"] :launch-mode]
-                 [:c [:open "Google Chrome.app"] :launch-mode]
-                 [:t [:open "iTerm.app"] :launch-mode]
-                 [:m [:open "MailPlane.app"] :launch-mode]
-                 [:q [:open "Quickbooks.app"] :launch-mode]
-                 [:r [:open "RubyMine.app"] :launch-mode]
-                 [:e [:open "Visual Studio Code.app"] :launch-mode]]}
-        {:des "spacebar mode - to move windows around"
-         :rules [[:a [:km "Window Left"] :spacebar-mode]
-                 [:f [:km "Window Right"] :spacebar-mode]
-                 [:w [:km "Window Top Left"] :spacebar-mode]
-                 [:e [:km "Window Top Right"] :spacebar-mode]
-                 [:s [:km "Window Bottom Left"] :spacebar-mode]
-                 [:d [:km "Window Bottom Right"] :spacebar-mode]
-                 [:c [:km "Window Fullscreen"] :spacebar-mode]]}]}
