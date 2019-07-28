@@ -75,7 +75,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 brew install autojump
 brew install cmake
 brew install ctags
-brew install clojure
 brew install elixir
 brew install exercism
 brew install fd
@@ -94,6 +93,7 @@ brew install the_silver_searcher
 brew install tmux
 brew install tree
 brew install wget
+brew install yarn
 brew install zsh
 
 brew tap caskroom/cask
@@ -176,8 +176,13 @@ git config --global user.name "Jason Yates"; git config --global user.email jayw
 
 # PostgreSQL
 # http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
-ln -sfv /usr/local/opt/postgres/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
+brew services start postgresql
+createdb jason
+
+
+# ln -sfv /usr/local/opt/postgres/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents
+# launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 # Node / Typescript
 npm i -g bash-language-server
@@ -194,6 +199,7 @@ read -r
 if [[ $REPLY ]]
 then
     rbenv install $REPLY
+    rbenv global $REPLY
 fi
 
 gem install bundler
@@ -201,8 +207,11 @@ gem install pry
 gem install rails
 gem install rake
 gem install rspec
+gem install solargraph
 
 # Vim
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cd ~/.vim/plugged/youcompleteme
 chmod +x install.py
@@ -213,6 +222,8 @@ cd -
 
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 chsh -s `which zsh`
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 ##########################################
 # ImageMagick

@@ -53,5 +53,8 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 # rbenv
 eval "$(rbenv init -)"
 
+# Go
+export GOPATH="$HOME/Code/go"
+
 # flutter
-export PATH="$PATH:/Users/jason/OneDrive/Code/flutter/bin"
+export PATH="$PATH:/Users/jason/Code/flutter/bin"

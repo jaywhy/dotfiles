@@ -1,6 +1,0 @@
-{:templates {:km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"
-             :open "open -a '%s'"}
- :simlayers {:launch-mode {:key :o}
-             :spacebar-mode {:key :spacebar}}
- :main [{:des "Change caps_lock to command+control+option+shift, but pressed alone it calls ESC."
-         :rules [[:##caps_lock :!SCTleft_option nil {:alone :escape}]]}]}
