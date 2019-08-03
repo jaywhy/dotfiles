@@ -72,68 +72,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install autojump
-brew install cmake
-brew install ctags
-brew install elixir
-brew install exercism
-brew install fd
-brew install fzf
-brew install git
-brew install go
-brew install macvim
-brew install ncdu
-brew install node
-brew install postgres
-brew install ripgrep
-brew install rbenv
-brew install rmtrash
-brew install ruby-build
-brew install the_silver_searcher
-brew install tmux
-brew install tree
-brew install wget
-brew install yarn
-brew install zsh
-
-brew tap caskroom/cask
-brew cask install alfred
-brew cask install backblaze
-brew cask install bartender
-brew cask install bettertouchtool
-brew cask install discord
-brew cask install evernote
-brew cask install firefox
-brew cask install google-backup-and-sync
-brew cask install google-chrome
-brew cask install hazel
-brew cask install iterm2
-brew cask install karabiner-elements
-brew cask install keyboard-maestro
-brew cask install kindle
-brew cask install launchcontrol
-brew cask install macvim
-brew cask install mos
-brew cask install parallels
-brew cask install pdfpenpro
-brew cask install pgadmin4
-brew cask install qbittorrent
-brew cask install quickbooks-online
-brew cask install rescuetime
-brew cask install resilio-sync
-brew cask install rubymine
-brew cask install slack
-brew cask install skitch
-brew cask install spotify
-brew cask install taskpaper
-brew cask install things
-brew cask install vitamin-r
-brew cask install vlc
-brew cask install visual-studio-code
-
-brew tap homebrew/cask-fonts
-
-
 #########################################
 # Dock
 #########################################
