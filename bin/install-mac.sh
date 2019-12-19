@@ -58,7 +58,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 #####################################################
 # Time Machine Setup
 #####################################################
-
 # tmutil enable
 # tmutil setdestination /Volumes/Backup
 
@@ -102,7 +101,6 @@ brew uninstall dockutil
 ##########################################
 
 ln -s /Users/jason/OneDrive/Music/iTunes /Users/jason/Music
-ln -s /Users/jason/OneDrive/Code /Users/jason/Code
 
 ##########################################
 # Configuration
@@ -110,8 +108,9 @@ ln -s /Users/jason/OneDrive/Code /Users/jason/Code
 
 # git
 
-git config --global user.name "Jason Yates"; git config --global user.email jaywhy@gmail.com
-
+git config --global user.name "Jason Yates"
+git config --global user.email jason@jasonyates.me
+git config --global core.editor "code --wait"
 # PostgreSQL
 # http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
 
@@ -150,11 +149,6 @@ gem install solargraph
 # Vim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-cd ~/.vim/plugged/youcompleteme
-chmod +x install.py
-./install.py --clang-completer
-cd -
 
 # zsh
 

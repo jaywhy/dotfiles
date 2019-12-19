@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged') " Directory for plugins
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -13,11 +14,11 @@ Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'janko-m/vim-test'
-Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
@@ -28,6 +29,7 @@ Plug 'w0rp/ale'
 Plug '907th/vim-auto-save'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -62,9 +64,6 @@ map <Leader>s :w<CR>
 map <Leader>n :NERDTreeToggle<CR>
 
 map <silent> <leader><cr> :noh<cr>
-
-" Alternative to ESC
-imap kj <Esc>
 
 " Moving around splits with ctrl and hjkl
 map <Space> <Leader>

@@ -43,9 +43,9 @@ source $ZSH/oh-my-zsh.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="fd . $HOME"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+export FZF_DEFAULT_COMMAND="fd --type f"
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -54,7 +54,9 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 eval "$(rbenv init -)"
 
 # Go
-export GOPATH="$HOME/Code/go"
+export GOPATH="$HOME/code/go"
 
 # flutter
-export PATH="$PATH:/Users/jason/Code/flutter/bin"
+export PATH="$PATH:/Users/jason/code/flutter/bin"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
