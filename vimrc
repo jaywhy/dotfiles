@@ -7,14 +7,17 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-peekaboo'
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-endwise'
-"Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
@@ -23,13 +26,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
 Plug 'slashmili/alchemist.vim'
-Plug 'w0rp/ale'
 "Plug 'terryma/vim-expand-region'
 "Plug 'terryma/vim-multiple-cursors'
 Plug '907th/vim-auto-save'
-Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -39,10 +41,12 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 set guifont=Menlo-Regular:h18
-set guioptions-=T " Remove toolbar
 
-let mapleader = ","
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:mapleader = ','
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+let g:auto_save = 1  " enable AutoSave on Vim startup 
 
 set hidden
 set ignorecase " Ignore case in search
@@ -58,11 +62,13 @@ set path+=lib/**,test/**,spec/**,app/**
 """"""""""""""""
 " Maps
 """"""""""""""""
+" fzf
 map <Leader>t :Files<CR>
 map <Leader>a :Buffers<CR>
 map <Leader>s :w<CR>
-map <Leader>n :NERDTreeToggle<CR>
 
+" nerdtree
+map <Leader>n :NERDTreeToggle<CR>
 map <silent> <leader><cr> :noh<cr>
 
 " Moving around splits with ctrl and hjkl
@@ -89,16 +95,6 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-"""""""""""""""
-" ale
-""""""""""""""
-let g:ale_linters = {
-\   'elixir': ['elixir-ls'],
-\}
-let g:ale_fixers = {
-\   'elixir': ['mix_format'],
-\}
 
 """""""""""""""
 " vimrc

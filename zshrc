@@ -1,15 +1,12 @@
-export EDITOR=code
-export PATH=$PATH:$HOME/.bin:/usr/local/bin:/usr/local/go/bin:./node_modules/.bin
+export EDITOR=vim
+export PATH=$PATH:$HOME/.bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-setopt autocd
-setopt completealiases
-
 plugins=(
-    git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions
+    git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions colorize dirhistory
 )
 
 ####################################################
@@ -48,15 +45,19 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 # export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # Go
-export GOPATH="$HOME/code/go"
+# export GOPATH="$HOME/code/go"
 
 # flutter
-export PATH="$PATH:/Users/jason/code/flutter/bin"
+# export PATH="$PATH:/Users/jason/code/flutter/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

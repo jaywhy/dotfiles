@@ -1,0 +1,5 @@
+[core]
+  editor = code --wait
+[user]
+  name = Jason Yates
+  email = jason@jasonyates.me

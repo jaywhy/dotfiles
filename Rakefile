@@ -4,7 +4,7 @@ def expand_paths(files)
   files.map { |f| File.expand_path(f) }
 end
 
-DOTFILES = %w[bin config/karabiner.edn vimrc zshrc tmux.conf rspec].freeze
+DOTFILES = %w[bin ideavimrc vimrc zshrc tmux.conf rspec rubocop.yml].freeze
 
 desc 'Install the dotfiles into home directory'
 task :install do

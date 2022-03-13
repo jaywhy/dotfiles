@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
+    - "bin/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Enabled: true
+Style/Documentation:
+  Enabled: false
