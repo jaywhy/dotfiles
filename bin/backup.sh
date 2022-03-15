@@ -7,4 +7,4 @@ rsync -ah --info=progress2 ~/OneDrive/Personal\ File\ Cabinet jason@192.168.5.21
 rsync -ah --info=progress2 ~/OneDrive/Yates\ File\ Cabinet jason@192.168.5.21:/volume1/Backup/
 
 cd $(dirname "$0")
-./rsync_tmbackup.sh /Users/jason/ jason@192.168.5.21:/volume1/Backup/TimeMachine/ excluded_files.txt
+./rsync_tmbackup.sh /Users/jason/ jason@192.168.5.21:/volume1/TimeMachine/ excluded_files.txt
