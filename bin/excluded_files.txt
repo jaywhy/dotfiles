@@ -1,31 +1,34 @@
-.viminfo
-.asdf/
-.oh-my-zsh/
-.rsync_tmbackup/
-.Trash/
-Downloads/
-node_modules/
-.DS_Store
-.elixir_ls/
-_build/
-deps/
-Cache/
-Caches/
-cache/
-tmp/
-.pub-cache/
-packages/
-Library/Application Support/AddressBook/
-Library/Application Support/CloudDocs/
-Library/Application Support/CrashReporter/
-Library/Application Support/Google/
-Library/Containers/
-Library/Group Containers/
-Library/HTTPStorages/
-Library/Application Support/FileProvider/
-Library/Messages/
-Library/Saved Application State/
-Applications/
-Applications (Parallels)/
-Logs/
-Parallels/
+- Backups.backupdb
+- .viminfo
+- .asdf/
+- .MobileBackups/
+- .oh-my-zsh/
+- .rsync_tmbackup/
+- .Spotlight-V100/
+- .TemporaryItems/
+- .Trash/
+- Downloads/
+- node_modules/
+- .DS_Store
+- .elixir_ls/
+- _build/
+- deps/
+- Cache/
+- Caches/
+- cache/
+- tmp/
+- .pub-cache/
+- packages/
++ Library/Application Support/
++ Library/Safari/Bookmarks.plist
++ Library/Preferences
+- Library/*
+- Library/Application Support/AddressBook/
+- Library/Application Support/CloudDocs/
+- Library/Application Support/CrashReporter/
+- Library/Application Support/FileProvider/
+- Library/Application Support/Google/
+- Applications/
+- Applications (Parallels)/
+- Logs/
+- Parallels/

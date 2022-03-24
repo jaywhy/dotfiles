@@ -1,5 +1,5 @@
 export EDITOR=vim
-export PATH=$PATH:$HOME/.bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin
+export PATH=$PATH:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
