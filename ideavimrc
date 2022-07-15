@@ -1,12 +1,63 @@
-" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
-set surround
-set multiple-cursors
-set commentary
-set incsearch
+let mapleader = " "
 
+set clipboard+=unnamed
+set incserch
+set hlsearch
+set number
+set relativenumber
+set visualbell
+set showmode
+
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+set commentary
+set easymotion
+set multiple-cursors
+set NERDTree
+set surround
+
+nmap <S-h> <action>(PreviousTab)
+nmap <S-l> <action>(NextTab)
+
+" Remaps redo to Shift-U. I prefer this. Intellij uses Ctrl-R for running tests.
+nmap U <C-r>
+
+nmap <C-S-k> :action EditorSelectWord<cr>
+vmap <C-S-k> :action EditorSelectWord<cr>
+nmap <C-S-j> :action EditorUnSelectWord<cr>
+vmap <C-S-j> :action EditorUnSelectWord<cr>
+
+nmap <Leader>sv :source ~/.ideavimrc<CR>
+nmap <leader>gr :action GotoRelated<cr>
+nmap <leader>t :action GotoTest<cr>
+nmap <leader>re :action RenameElement<cr>
+nmap <leader>rf :action RenameFile<cr>
+nmap <leader>rr :action Run<cr>
+nmap <leader>rc :action ChooseRunConfiguration<cr>
+nmap <leader>pv <A-F1>
+nmap <leader>e :NERDTree<cr>
+
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>ss :action GotoSymbol<cr>
+nmap <leader>st :action FindInPath<cr>
+
+" Window movement
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <c-k> <C-w>k
+nmap <C-j> <C-w>j
+
+
+" Visual mode
+" Code block indentation. I don't like the default behavior of unhighlighting after indentation.
+vmap < <gv
+vmap > >gv
+" If pasting over highlighting text, it won't add highlighted text to current register
+" vmap p _dP
+
+xmap <A-j>
 
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
-" https://stackoverflow.com/questions/55202799/ideavim-multi-cursor-usage 
+" https://stackoverflow.com/questions/55202799/ideavim-multi-cursor-usage
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
 nmap g<C-n> <Plug>NextOccurrence
@@ -22,5 +73,3 @@ nmap <S-C-n> <Plug>AllWholeOccurrences
 xmap <S-C-n> <Plug>AllWholeOccurrences
 nmap g<S-C-n> <Plug>AllOccurrences
 xmap g<S-C-n> <Plug>AllOccurrences
-
-nnoremap U <C-r>

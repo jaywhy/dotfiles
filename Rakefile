@@ -1,12 +1,24 @@
-require 'rake'
+require "rake"
 
 def expand_paths(files)
   files.map { |f| File.expand_path(f) }
 end
 
-DOTFILES = %w[bin ideavimrc vimrc zshrc tmux.conf rspec rubocop.yml].freeze
+DOTFILES = %w[
+  bin
+  config/nvim
+  config/alacritty
+  config/lvim/config.lua
+  ideavimrc
+  iex.exs
+  rspec
+  rubocop.yml
+  tmux.conf
+  vimrc
+  zshrc
+].freeze
 
-desc 'Install the dotfiles into home directory'
+desc "Install the dotfiles into home directory"
 task :install do
   DOTFILES.each do |src|
     # puts src
@@ -20,7 +32,7 @@ def link_file(source_file, target_file)
 end
 
 def home(file)
-  File.join(ENV['HOME'], file)
+  File.join(ENV["HOME"], file)
 end
 
 def lnk(source_file, target_file)
