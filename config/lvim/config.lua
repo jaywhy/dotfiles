@@ -4,11 +4,12 @@ lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.leader = "space"
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 lvim.keys.normal_mode["<C-1>"] = ":1gt<cr>"
 lvim.keys.normal_mode["<C-2>"] = ":2gt<cr>"
+
 
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
@@ -152,6 +153,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   { "folke/tokyonight.nvim" },
   { "pocco81/autosave.nvim" },
+  { "christoomey/vim-tmux-navigator" },
   { "easymotion/vim-easymotion" },
   { "p00f/nvim-ts-rainbow" },
   { "vim-test/vim-test" },
@@ -183,6 +185,8 @@ lvim.builtin.which_key.mappings["t"] = {
   r = { ":TestLast<cr>", "Test last" },
   v = { ":TestVisit<cr>", "Test visit" }
 }
+
+vim.g.tmux_navigator_save_on_switch = 1
 vim.g.copilot_assume_mapped = true
 vim.g["test#strategy"] = "vimux"
 
