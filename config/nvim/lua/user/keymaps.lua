@@ -5,6 +5,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
@@ -55,3 +56,22 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+
+keymap("n", "<leader>-", ":wincmd _<cr>:wincmd |<cr>", opts)
+keymap("n", "<c-q>", ":q<cr>", opts)
+keymap("n", "<leader>=", ":wincmd =<cr>", opts)
+
+-- Tab navigation
+keymap("n", "<c-1>", "1gt", opts)
+keymap("n", "<c-2>", "2gt", opts)
+keymap("n", "<c-3>", "3gt", opts)
+keymap("n", "<c-4>", "4gt", opts)
+keymap("n", "<c-5>", "5gt", opts)
+keymap("n", "<c-6>", "6gt", opts)
+keymap("n", "<C-7>", "7gt", opts)
+keymap("n", "<C-8>", "8gt", opts)
+keymap("n", "<C-9>", "9gt", opts)
+keymap("n", "<C-0>", "0gt", opts)
+
+

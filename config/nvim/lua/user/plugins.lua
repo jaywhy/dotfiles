@@ -46,6 +46,17 @@ return packer.startup(function(use)
   use "tpope/vim-sensible" -- Sensible vim default configuration
   use "tpope/vim-fugitive" -- Git integration for vim
   use "akinsho/toggleterm.nvim" -- Toggle between terminal and vim
+  use "christoomey/vim-tmux-navigator" -- Makes pane movement in vim work with same binding as tmux pane movement
+  use "easymotion/vim-easymotion"
+  use "p00f/nvim-ts-rainbow" -- Rainbow colors(()) Wow!
+  use "vim-test/vim-test"
+  use "tpope/vim-fugitive" -- Git integration for vim
+  use "tpope/vim-endwise" -- Add end after do, def, etc
+  use "tpope/vim-surround" -- Change "" to '' and vice versa
+  use "tpope/vim-rails" -- Rails integration for vim
+  use "github/copilot.vim" -- Magic
+  use "preservim/vimux" -- Integrate vim with tmux works with vim-test
+  use { "folke/trouble.nvim", cmd = "TroubleToggle" }
   use { "nvim-lualine/lualine.nvim", requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- Statusline
 
   -- Telescope
