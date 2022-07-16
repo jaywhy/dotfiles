@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "christoomey/vim-tmux-navigator" -- Makes pane movement in vim work with same binding as tmux pane movement
   use "easymotion/vim-easymotion"
   use "p00f/nvim-ts-rainbow" -- Rainbow colors(()) Wow!
+  use "akinsho/bufferline.nvim" -- Show cool buffer line above
   use "vim-test/vim-test"
   use "tpope/vim-fugitive" -- Git integration for vim
   use "tpope/vim-endwise" -- Add end after do, def, etc
