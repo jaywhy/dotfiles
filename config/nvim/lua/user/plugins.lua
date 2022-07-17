@@ -45,6 +45,8 @@ return packer.startup(function(use)
   use "tpope/vim-surround" -- Surrounds text with pairs of characters.
   use "tpope/vim-sensible" -- Sensible vim default configuration
   use "tpope/vim-fugitive" -- Git integration for vim
+  use "kyazdani42/nvim-web-devicons" -- Icon for nvim-tree and lualine
+  use "kyazdani42/nvim-tree.lua" -- Explorer
   use "akinsho/toggleterm.nvim" -- Toggle between terminal and vim
   use "christoomey/vim-tmux-navigator" -- Makes pane movement in vim work with same binding as tmux pane movement
   use "easymotion/vim-easymotion"
@@ -57,8 +59,8 @@ return packer.startup(function(use)
   use "tpope/vim-rails" -- Rails integration for vim
   use "github/copilot.vim" -- Magic
   use "preservim/vimux" -- Integrate vim with tmux works with vim-test
-  use { "folke/trouble.nvim", cmd = "TroubleToggle" }
-  use { "nvim-lualine/lualine.nvim", requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- Statusline
+  use { "folke/trouble.nvim", cmd = "TroubleToggle" } -- Shows pretty diagnostics
+  use "nvim-lualine/lualine.nvim" -- Statusline
 
   -- Telescope
   use "nvim-telescope/telescope.nvim" -- A vim plugin for exploring files and directories

@@ -5,6 +5,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Buffers
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>x", ":bd<CR>", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
+
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -15,20 +20,16 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-
 -- Visual --
--- Stay in indent mode
+-- Stay in indent mode after indenting once
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "<A-j>", ":m .+2<CR>==", opts)
+keymap("v", "<A-k>", ":m .-1<CR>==", opts)
 
-keymap("v", "p", '"_dP', opts) -- If pasting over highlighting text, it won't add highlighted text current register
+keymap("v", "p", '"_dP', opts) -- If pasting over highlighting text, it won't add highlighted text to current register
 
 -- Visual Block --
 -- Move text up and down
@@ -63,15 +64,12 @@ keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<leader>=", ":wincmd =<cr>", opts)
 
 -- Tab navigation
-keymap("n", "<c-1>", "1gt", opts)
-keymap("n", "<c-2>", "2gt", opts)
-keymap("n", "<c-3>", "3gt", opts)
-keymap("n", "<c-4>", "4gt", opts)
-keymap("n", "<c-5>", "5gt", opts)
-keymap("n", "<c-6>", "6gt", opts)
-keymap("n", "<C-7>", "7gt", opts)
-keymap("n", "<C-8>", "8gt", opts)
-keymap("n", "<C-9>", "9gt", opts)
-keymap("n", "<C-0>", "0gt", opts)
-
-
+keymap("n", "<leader>1", "1gt", opts)
+keymap("n", "<leader>2", "2gt", opts)
+keymap("n", "<leader>3", "3gt", opts)
+keymap("n", "<leader>4", "4gt", opts)
+keymap("n", "<leader>5", "5gt", opts)
+keymap("n", "<leader>6", "6gt", opts)
+keymap("n", "<leader>7", "7gt", opts)
+keymap("n", "<leader>8", "8gt", opts)
+keymap("n", "<leader>9", "9gt", opts)

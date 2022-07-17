@@ -1,7 +1,8 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "onedark"
+
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -10,19 +11,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 lvim.keys.normal_mode["<leader>-"] = ":wincmd _<cr>:wincmd |<cr>"
 lvim.keys.normal_mode["<leader>="] = ":wincmd =<cr>"
-
-lvim.keys.normal_mode["<C-1>"] = "1gt"
-lvim.keys.normal_mode["<C-2>"] = "2gt"
-lvim.keys.normal_mode["<C-3>"] = "3gt"
-lvim.keys.normal_mode["<C-4>"] = "4gt"
-lvim.keys.normal_mode["<C-5>"] = "5gt"
-lvim.keys.normal_mode["<C-6>"] = "6gt"
-lvim.keys.normal_mode["<C-7>"] = "7gt"
-lvim.keys.normal_mode["<C-8>"] = "8gt"
-lvim.keys.normal_mode["<C-9>"] = "9gt"
-lvim.keys.normal_mode["<C-0>"] = "0gt"
-
-
+lvim.keys.normal_mode["<leader>sx"] = "<cmd>Telescope projects<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -162,6 +151,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
+  { "navarasu/onedark.nvim" },
   { "folke/tokyonight.nvim" },
   { "christoomey/vim-tmux-navigator" },
   { "easymotion/vim-easymotion" },
@@ -187,9 +177,6 @@ require("nvim-treesitter.configs").setup {
   }
 }
 
-lvim.builtin.which_key.mappings["s"] = {
-  x = { "<cmd>Telescope projects<CR>", "Projects" }
-}
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Testing",
   f = { ":TestFile<cr>", "Test file" },
@@ -202,59 +189,3 @@ lvim.builtin.which_key.mappings["t"] = {
 vim.g.tmux_navigator_save_on_switch = 1
 vim.g.copilot_assume_mapped = true
 vim.g["test#strategy"] = "vimux"
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
-
--- Neotest stuff. I can't get it to work
--- { "nvim-neotest/neotest-vim-test" },
--- {
---   "nvim-neotest/neotest",
---   requires = {
---     "nvim-lua/plenary.nvim",
---     "nvim-treesitter/nvim-treesitter",
---     "antoinemadec/FixCursorHold.nvim",
---     "olimorris/neotest-rspec",
---   },
---   config = function()
---     require('neotest').setup({
---       adapters = {
---         require('neotest-rspec'),
---       }
---     })
---   end
--- }
--- require("neotest").setup({
---   adapters = {
---     require("neotest-rspec"),
---     require("neotest-vim-test")({
---       ignore_file_types = { "ruby" },
---     }),
---   },
--- })
-
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Neotest",
---   t = { "<cmd>lua require('neotest').run.run()<CR>", "Test nearest" },
---   f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Test file" },
---   j = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary" },
---   s = {
---     function()
---       local neotest = require("neotest")
---       for _, adapter_id in ipairs(neotest.run.adapters()) do
---         neotest.run.run({ suite = true, adapter = adapter_id })
---       end
---     end,
---     "Test suite"
---   }
