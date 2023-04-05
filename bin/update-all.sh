@@ -5,17 +5,18 @@ brew cleanup
 brew doctor
 
 # asdf
+asdf plugin update nodejs
+asdf install nodejs latest
+asdf global nodejs latest
 asdf plugin update ruby
 asdf install ruby latest
 asdf global ruby latest
-asdf global ruby latest
-asdf plugin update elixir
-asdf install elixir latest
-asdf global elixir latest
 asdf plugin update erlang
 asdf install erlang latest
 asdf global erlang latest
-o
+asdf plugin update elixir
+asdf install elixir latest
+asdf global elixir latest
 
 # Elixir
 mix local.hex
