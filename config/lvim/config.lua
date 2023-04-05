@@ -1,8 +1,11 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedark"
 
+vim.cmd("colorscheme onedarkpro")
+require("onedarkpro").setup({
+  theme = "onedark_dark"
+})
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -36,7 +39,7 @@ lvim.builtin.telescope.defaults.mappings = {
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["d"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -152,18 +155,44 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { "navarasu/onedark.nvim" },
+  { "olimorris/onedarkpro.nvim" },
+  { "Mofiqul/vscode.nvim" },
   { "folke/tokyonight.nvim" },
+  { "Mofiqul/dracula.nvim" },
+  { "projekt0n/github-nvim-theme" },
+  { "EdenEast/nightfox.nvim" },
   { "christoomey/vim-tmux-navigator" },
   { "easymotion/vim-easymotion" },
+  { "mg979/vim-visual-multi" },
   { "p00f/nvim-ts-rainbow" },
+  { "chentoast/marks.nvim" },
   { "vim-test/vim-test" },
   { "tpope/vim-fugitive" },
   { "tpope/vim-endwise" },
   { "tpope/vim-surround" },
   { "tpope/vim-rails" },
-  { "github/copilot.vim" },
+  { "tpope/vim-projectionist" },
   { "preservim/vimux" },
   { "folke/trouble.nvim", cmd = "TroubleToggle" },
+  -- { "zbirenbaum/copilot.lua",
+  --   event = { "VimEnter" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup {
+  --         plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+  --       }
+  --     end, 100)
+  --   end,
+  -- },
+  -- { "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua", "nvim-cmp" },
+  -- }
+}
+
+require 'marks'.setup {
+  default_mappings = true,
+  signs = true,
+  mappings = {}
 }
 
 require("nvim-treesitter.configs").setup {
@@ -187,5 +216,6 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 vim.g.tmux_navigator_save_on_switch = 1
-vim.g.copilot_assume_mapped = true
 vim.g["test#strategy"] = "vimux"
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })

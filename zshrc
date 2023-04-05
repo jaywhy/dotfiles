@@ -1,12 +1,12 @@
 export EDITOR=vim
-export PATH=$PATH:$HOME/.bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin
+export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 plugins=(
-    asdf autojump colored-man-pages git rails ruby vi-mode zsh-syntax-highlighting zsh-autosuggestions
+    asdf autojump colored-man-pages vi-mode zsh-syntax-highlighting zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
