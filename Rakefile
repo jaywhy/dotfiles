@@ -9,6 +9,8 @@ DOTFILES = %w[
   config/nvim
   config/alacritty
   config/lvim/config.lua
+  gitconfig
+  gitignore
   ideavimrc
   iex.exs
   rspec

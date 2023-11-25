@@ -1,5 +1,6 @@
 [core]
-  editor = lvim
+  editor = nvim
+	autocrlf = input
 [user]
   name = Jason Yates
   email = jason@jasonyates.me

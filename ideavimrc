@@ -34,7 +34,7 @@ vmap <C-S-j> :action EditorUnSelectWord<cr>
 vmap <leader>/ :action CommentByLineComment<cr>
 nmap <leader>/ :action CommentByLineComment<cr>
 
-nmap <leader>sv :source ~/.ideavimrc<CR>
+nmap <leader>sv :source ~/.ideavimrc<CR> 
 nmap <leader>jr :action GotoRelated<cr>
 nmap <leader>jt :action GotoTest<cr>
 nmap <leader>tf :action RerunFailedTests<cr>
@@ -50,6 +50,9 @@ nmap <leader>sf :action GotoFile<cr>
 nmap <leader>ss :action GotoSymbol<cr>
 nmap <leader>st :action FindInPath<cr>
 nmap <leader>w :action SaveAll<cr>
+
+" insert mode
+imap jk <Esc>
   
 " Window movement
 nmap <C-h> <C-w>h

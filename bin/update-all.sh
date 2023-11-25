@@ -12,7 +12,7 @@ asdf plugin update ruby
 asdf install ruby latest
 asdf global ruby latest
 asdf plugin update erlang
-asdf install erlang latest
+KERN_BUILD_DOCS=yes asdf install erlang latest
 asdf global erlang latest
 asdf plugin update elixir
 asdf install elixir latest
@@ -24,7 +24,7 @@ mix archive.install hex phx_new
 
 # Ruby
 gem update
-gem cleanup
+# gem cleanup
 gem update --system
 
 # Zsh
@@ -32,3 +32,7 @@ zsh ~/.oh-my-zsh/tools/upgrade.sh
 
 # LunarVim
 lvim +LvimUpdate +q
+
+# macOS
+
+softwareupdate -i -a
