@@ -6,9 +6,6 @@ end
 
 DOTFILES = %w[
   bin
-  config/nvim
-  config/alacritty
-  config/lvim/config.lua
   gitconfig
   gitignore
   ideavimrc

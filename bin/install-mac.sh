@@ -1,14 +1,6 @@
 # Setup OSX.
 xcode-select --install
 
-# Time Machine Setup
-# tmutil enable
-# tmutil setdestination /Volumes/Backup
-
-# VM images are big files that are changed everytime you run them. If you don't
-# exclude them you'll run out of space on your backup drive. There maybe a work around.
-# tmutil addexclusion ~/Virtual\ Machines/
-
 # Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 

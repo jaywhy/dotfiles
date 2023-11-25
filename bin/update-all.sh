@@ -34,5 +34,8 @@ zsh ~/.oh-my-zsh/tools/upgrade.sh
 lvim +LvimUpdate +q
 
 # macOS
-
 softwareupdate -i -a
+
+# Run backup
+
+backup.sh
