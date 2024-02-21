@@ -1,3 +1,6 @@
+# Run backup
+backup.sh
+
 # Homebrew
 brew update
 brew upgrade
@@ -35,7 +38,3 @@ lvim +LvimUpdate +q
 
 # macOS
 softwareupdate -i -a
-
-# Run backup
-
-backup.sh

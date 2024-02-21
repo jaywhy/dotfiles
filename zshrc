@@ -15,7 +15,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias ls='exa --group-directories-first --color=always'
+alias ll=' -alh'
 alias la='ls -la'
+alias cd='z'
+alias tree='exa --tree'
+alias cat='bat'
 alias rm='trash'
 alias v='vim'
 alias n='nvim'
@@ -25,8 +29,8 @@ alias n='nvim'
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # starship
 eval "$(starship init zsh)"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
