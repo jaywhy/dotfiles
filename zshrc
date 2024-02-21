@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export EDITOR=vim
 export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:/Users/jason/Library/Application\ Support/JetBrains/Toolbox/scripts:$HOME/.docker/bin
 
@@ -14,19 +12,28 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias ls='exa --group-directories-first --color=always'
+alias ls='eza --group-directories-first --color=always'
+alias ll=' -alh'
 alias la='ls -la'
+alias cd='z'
+alias tree='eza --tree'
+alias cat='bat'
 alias rm='trash'
 alias v='vim'
 alias n='nvim'
+alias nvim='NVIM_APPNAME=LazyVim nvim'
 
 # Configuration
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # starship
 eval "$(starship init zsh)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# eval "$(mise activate)"
+#mise
+# eval "$(/Users/jason/.local/bin/mise activate zsh)"
