@@ -6,6 +6,7 @@ end
 
 DOTFILES = %w[
   bin
+  config/LazyVim
   gitconfig
   gitignore
   ideavimrc
@@ -20,7 +21,6 @@ DOTFILES = %w[
 desc "Install the dotfiles into home directory"
 task :install do
   DOTFILES.each do |src|
-    # puts src
     link_file(File.expand_path(src), home(".#{src}"))
   end
 end
@@ -35,6 +35,5 @@ def home(file)
 end
 
 def lnk(source_file, target_file)
-  # puts "Linking #{target_file}"
   sh %(ln -sf "#{source_file}" "#{target_file}")
 end
