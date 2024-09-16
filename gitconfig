@@ -4,3 +4,5 @@
 [user]
   name = Jason Yates
   email = jason@jasonyates.me
+[init]
+	defaultBranch = main

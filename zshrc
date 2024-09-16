@@ -6,19 +6,19 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 plugins=(
-    asdf autojump bundler colored-man-pages git mix ruby rails vi-mode zsh-syntax-highlighting zsh-autosuggestions
+    asdf bundler colored-man-pages git mix ruby rails vi-mode you-should-use zsh-syntax-highlighting zsh-autosuggestions
 )
-
-source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias ls='eza --group-directories-first --color=always'
-alias ll=' -alh'
+alias ll='ls -alh'
+source $ZSH/oh-my-zsh.sh
 alias la='ls -la'
 alias cd='z'
 alias tree='eza --tree'
 alias cat='bat'
 alias rm='trash'
+alias j='z'
 alias v='vim'
 alias n='nvim'
 alias nvim='NVIM_APPNAME=LazyVim nvim'
