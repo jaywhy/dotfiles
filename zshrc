@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:/Users/jason/Library/Application\ Support/JetBrains/Toolbox/scripts:$HOME/.docker/bin
 
 # Path to your oh-my-zsh installation.
@@ -9,10 +9,11 @@ plugins=(
     asdf bundler colored-man-pages git mix ruby rails vi-mode you-should-use zsh-syntax-highlighting zsh-autosuggestions
 )
 
+source $ZSH/oh-my-zsh.sh
+
 # Aliases
 alias ls='eza --group-directories-first --color=always'
 alias ll='ls -alh'
-source $ZSH/oh-my-zsh.sh
 alias la='ls -la'
 alias cd='z'
 alias tree='eza --tree'
