@@ -42,4 +42,4 @@ eval "$(starship init zsh)"
 
 # eval "$(mise activate)"
 #mise
-# eval "$(/Users/jason/.local/bin/mise activate zsh)"
+# eval "$(mise activate zsh)"

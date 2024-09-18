@@ -10,6 +10,7 @@ DOTFILES = %w[
   config/karabiner
   config/kitty
   config/LazyVim
+  config/yazi
   gitconfig
   gitignore
   ideavimrc
