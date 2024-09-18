@@ -6,6 +6,9 @@ end
 
 DOTFILES = %w[
   bin
+  config/bat
+  config/karabiner
+  config/kitty
   config/LazyVim
   gitconfig
   gitignore
