@@ -13,7 +13,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias ls='eza --group-directories-first --color=always'
+alias ls='eza --group-directories-first --icons --color=always'
 alias tree='ls --tree'
 alias lt='ls --tree --level 2'
 alias ll='ls -alh'
