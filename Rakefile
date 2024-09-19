@@ -19,6 +19,7 @@ DOTFILES = %w[
   rubocop.yml
   tmux.conf
   vimrc
+  wezterm.lua
   zshrc
 ].freeze
 
