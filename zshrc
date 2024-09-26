@@ -1,13 +1,16 @@
 # Reload with omz reload
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
 export EDITOR=nvim
 export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:/Users/jason/Library/Application\ Support/JetBrains/Toolbox/scripts:$HOME/.docker/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 plugins=(
-    asdf bundler colored-man-pages git mix ruby rails vi-mode you-should-use zsh-syntax-highlighting zsh-autosuggestions
+  asdf bundler colored-man-pages git mix ruby rails you-should-use zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -43,3 +46,6 @@ eval "$(starship init zsh)"
 # eval "$(mise activate)"
 #mise
 # eval "$(mise activate zsh)"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
