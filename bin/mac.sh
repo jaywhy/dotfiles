@@ -66,6 +66,9 @@ defaults write com.apple.dock autohide-time-modifier -int 0
 defaults write com.apple.dock springboard-show-duration -int 0
 defaults write com.apple.dock springboard-hide-duration -int 0
 
+# Drag any part of the window to move it using ctrl+cmd
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 # Auto hide the dock
 defaults write com.apple.dock autohide -int 1
 
@@ -73,3 +76,6 @@ killall Dock
 
 # 𝗗𝗶𝘀𝗮𝗯𝗹𝗲 𝗔𝗻𝗻𝗼𝘆𝗶𝗻𝗴 𝗗𝗶𝘀𝗸 𝗪𝗮𝗿𝗻𝗶𝗻𝗴
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
+
+# disable Dock bouncing of apps
+defaults write com.apple.dock no-bouncing -bool TRUE

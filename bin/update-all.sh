@@ -8,18 +8,25 @@ brew cleanup
 brew doctor
 
 # asdf
-asdf plugin update nodejs
+asdf plugin update --all
+
 asdf install nodejs latest
 asdf global nodejs latest
-asdf plugin update ruby
+
 asdf install ruby latest
 asdf global ruby latest
-asdf plugin update erlang
+
 KERN_BUILD_DOCS=yes asdf install erlang latest
 asdf global erlang latest
-asdf plugin update elixir
+
 asdf install elixir latest
 asdf global elixir latest
+
+asdf install python latest
+asdf global python latest
+
+# mise
+mise upgrade
 
 # Elixir
 mix local.hex
@@ -33,8 +40,9 @@ gem update --system
 # Zsh
 zsh ~/.oh-my-zsh/tools/upgrade.sh
 
-# LunarVim
-lvim +LvimUpdate +q
-
 # macOS
 softwareupdate -i -a
+
+# github copilot
+
+gh extension upgrade gh-copilot

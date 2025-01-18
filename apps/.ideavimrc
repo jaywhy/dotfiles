@@ -1,0 +1,93 @@
+let mapleader = " "
+
+set clipboard+=unnamed
+set incserch
+set hlsearch
+set number
+set visualbell
+set showmode
+set relativenumber
+
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+set commentary
+set easymotion
+set multiple-cursors
+set NERDTree
+set surround
+
+nnoremap <leader> :source ~/.ideavimrc<CR>
+
+nmap <S-h> <action>(PreviousTab)
+nmap <S-l> <action>(NextTab)
+
+" Action List for Intellij
+" https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+
+nmap <C-S-k> :action EditorSelectWord<cr>
+vmap <C-S-k> :action EditorSelectWord<cr>
+nmap <C-S-j> :action EditorUnSelectWord<cr>
+vmap <C-S-j> :action EditorUnSelectWord<cr>
+
+vmap <leader>/ :action CommentByLineComment<cr>
+nmap <leader>/ :action CommentByLineComment<cr>
+
+nmap <leader>sv :source ~/.ideavimrc<CR>
+nmap <leader>jr :action GotoRelated<cr>
+nmap <leader>jt :action GotoTest<cr>
+nmap <leader>re :action RenameElement<cr>
+nmap <leader>rf :action RenameFile<cr>
+nmap <leader>rc :action ChooseRunConfiguration<cr>
+nmap <leader>rd :action ChooseDebugConfiguration<cr>
+nmap <leader>ta :action ChooseRunConfiguration<cr>
+" Runs nearest test
+nmap <leader>tn :action RunClass<cr>
+nmap <leader>tf :action RerunFailedTests<cr>
+" Run last test
+nmap <leader>tl :action Run<cr>
+nmap <leader>pv <A-F1>
+nmap <leader>e :NERDTree<cr>
+
+nmap <leader>sf :action GotoFile<cr>
+nmap <leader>ss :action GotoSymbol<cr>
+nmap <leader>st :action FindInPath<cr>
+nmap <leader>w :action SaveAll<cr>
+
+" insert mode
+imap jk <Esc>
+
+" Window movement
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <c-k> <C-w>k
+nmap <C-j> <C-w>j
+
+" Easymotion
+
+"map <Leader>s <Plug>(easymotion-s)
+
+" Visual mode
+" Code block indentation. I don't like the default behavior of unhighlighting after indentation.
+vmap < <gv
+vmap > >gv
+" If pasting over highlighting text, it won't add highlighted text to current register
+" vmap p _dP
+
+xmap <A-j>
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+" https://stackoverflow.com/questions/55202799/ideavim-multi-cursor-usage
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+nmap g<S-C-n> <Plug>AllOccurrences
+xmap g<S-C-n> <Plug>AllOccurrences

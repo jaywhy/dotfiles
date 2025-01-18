@@ -1,44 +1,25 @@
 require "rake"
 
-def expand_paths(files)
-  files.map { |f| File.expand_path(f) }
-end
-
 DOTFILES = %w[
-  bin
-  config/bat
-  config/karabiner
-  config/kitty
-  config/LazyVim
-  config/yazi
-  gitconfig
-  gitignore
-  ideavimrc
-  iex.exs
-  rspec
-  rubocop.yml
-  tmux.conf
-  vimrc
-  wezterm.lua
-  zshrc
+  aerospace
+  apps
+  bat
+  git
+  karabiner
+  kitty
+  nvim
+  tmux
+  vim
+  yazi
+  zellij
+  zsh
 ].freeze
 
-desc "Install the dotfiles into home directory"
+desc "Install the dotfiles into home directory using GNU stow"
 task :install do
-  DOTFILES.each do |src|
-    link_file(File.expand_path(src), home(".#{src}"))
-  end
+  DOTFILES.each { stow(it) }
 end
 
-def link_file(source_file, target_file)
-  rm(target_file) if File.exist?(target_file) || File.directory?(target_file)
-  lnk(source_file, target_file)
-end
-
-def home(file)
-  File.join(ENV["HOME"], file)
-end
-
-def lnk(source_file, target_file)
-  sh %(ln -sf "#{source_file}" "#{target_file}")
+def stow(app)
+  sh %(stow --ignore=DS_Store -t ~ #{app})
 end
