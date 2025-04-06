@@ -1,7 +1,11 @@
 return {
-  "RRethy/nvim-treesitter-endwise",
-  main = "nvim-treesitter.configs",
-  opts = {
-    endwise = { enable = true },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "RRethy/nvim-treesitter-endwise",
+    },
+    opts = {
+      endwise = { enable = true },
+    },
   },
 }

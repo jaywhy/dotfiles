@@ -5,6 +5,7 @@ DOTFILES = %w[
   apps
   bat
   git
+  hammerspoon
   karabiner
   kitty
   nvim

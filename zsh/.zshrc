@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 
 plugins=(
-  asdf bundler colored-man-pages git mix ruby rails you-should-use zsh-syntax-highlighting zsh-autosuggestions
+  bundler colored-man-pages git mix ruby rails you-should-use zsh-syntax-highlighting zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -23,12 +23,13 @@ alias lt3='ls --tree --level 3'
 alias lt4='ls --tree --level 4'
 alias ll='ls -alh'
 alias la='ls -la'
+alias j='z'
 alias cd='z'
 alias cat='bat'
 alias rm='trash'
-alias j='z'
 alias v='vim'
 alias n='nvim'
+alias qc='q chat'
 alias ff='fzf --preview "bat --style=numbers --color=always {}"'
 alias fo='fzf --preview "bat --style=numbers --color=always {}" --bind "enter:execute(NVIM_APPNAM=LazyVim nvim {})"'
 alias lg='lazygit'
@@ -45,7 +46,7 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 #mise
-# eval "$(mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # yazi
 function y() {
@@ -91,8 +92,11 @@ fdv() {
     fda ~/OneDrive/NaturaLawn/File\ Cabinet/Vendors
 }
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/jason/.lmstudio/bin"
+
+# Added by Windsurf
+export PATH="/Users/jason/.codeium/windsurf/bin:$PATH"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
