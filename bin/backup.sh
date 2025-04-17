@@ -29,7 +29,11 @@ backup_directory() {
     mkdir -p "$backup_dir"
 
     echo "Backing up $source_dir to $backup_file"
-    tar --exclude="$exclude_pattern" -cf - "$source_dir" | pv | gzip > "$backup_file"
+    if [ -d "$exclude_pattern" ]; then
+        tar --exclude="$exclude_pattern" -cf - "$source_dir" | pv | gzip > "$backup_file"
+    else
+        tar -cf - "$source_dir" | pv | gzip > "$backup_file"
+    fi
 
     cd "$backup_dir"
     /bin/ls -t | tail -n +$((keep_count + 1)) | xargs -I {} rm -f {}

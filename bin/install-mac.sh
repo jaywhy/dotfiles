@@ -35,8 +35,3 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 chsh -s `which zsh`
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-# Terminal
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
-brew install --cask font-fira-code-nerd-font
