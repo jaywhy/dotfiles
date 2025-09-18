@@ -2,33 +2,30 @@
 xcode-select --install
 
 # Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# git
-git config --global user.name "Jason Yates"
-git config --global user.email jason@jasonyates.me
-git config --global core.editor "code --wait"
+brew install amazon-q autojump balenaetcher bartender backblaze bat bettertouchtool btop daisydisk dash@6 discord@canary docker-desktop dupeguru eza
+brew install fd firefox flyctl font-fira-code-nerd-font font-hack-nerd-font font-symbols-only-nerd-font fzf git gh hazel htop iina iterm2 karabiner-elements keyboard-maestro
+brew install lazygit lua macvim-app messenger meilisearch mise neovim
+brew install ngrok nmap node numi ocrmypdf pearcleaner pdfpenpro pgadmin4 postgres-unofficial readwise-ibooks
+brew install resilio-sync ripgrep rsync shottr spotify steam tmux trash-cli
+brew install typora visual-studio-code vlc wget yarn zed zsh
+
+# mise
+mise use -g ruby
+mise use -g elixir
+mise use -g nodejs
+mise use -g python
 
 # fzf
 $(brew --prefix)/opt/fzf/install
 
-# Node / Typescript
-npm i -g bash-language-server
-npm install -g tslint
-npm install -g typescript
-
 # Ruby
 gem install bundler
-gem install pry
 gem install rails
 gem install rake
 gem install rspec
-gem install solargraph
 
-# Vim
-## vim-plug
-# curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# vim -c 'PlugInstall' -c 'qa'
 
 # zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh

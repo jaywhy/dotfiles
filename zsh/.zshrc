@@ -98,5 +98,13 @@ export PATH="$PATH:/Users/jason/.lmstudio/bin"
 # Added by Windsurf
 export PATH="/Users/jason/.codeium/windsurf/bin:$PATH"
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/jason/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

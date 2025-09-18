@@ -20,7 +20,6 @@ sync_directory "/Users/jason/OneDrive/Yates File Cabinet"
 backup_directory() {
     local source_dir="$1"
     local exclude_pattern="$2"
-    local keep_count="${3:-10}"
     local dir_name=$(basename "$source_dir")
     local backup_dir="$BACKUP_ROOT/$dir_name"
     local timestamp=$(date +%Y%m%d%H%M%S)
@@ -35,8 +34,9 @@ backup_directory() {
         tar -cf - "$source_dir" | pv | gzip > "$backup_file"
     fi
 
+    echo "Starting cleanup in $backup_dir"
     cd "$backup_dir"
-    /bin/ls -t | tail -n +$((keep_count + 1)) | xargs -I {} rm -f {}
+    /bin/ls -t | tail -n +6 | xargs -I {} rm -f {}
     cd "$HOME"
 }
 

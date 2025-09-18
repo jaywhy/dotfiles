@@ -13,9 +13,9 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  # JankyBorders has a built-in detection of already running process,
-  # so it won't be run twice on AeroSpace restart
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 ]
 
 start-at-login = true
@@ -93,8 +93,8 @@ outer.right = 10
 # end tell'
 # '''
 
-cmd-h = []     # Disable "hide application"
-cmd-alt-h = [] # Disable "hide others"
+# cmd-h = []     # Disable "hide application"
+# cmd-alt-h = [] # Disable "hide others"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -203,22 +203,22 @@ alt-shift-semicolon = 'mode service'
 alt-r = 'mode resize' # Enter resize mode
 
 [mode.resize.binding]
-  h = 'resize width -50'
-  j = 'resize height +50'
-  k = 'resize height -50'
-  l = 'resize width +50'
-  enter = 'mode main'
-  esc = 'mode main'
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-enter = 'mode main' # exit from 'service' mode
+enter = 'mode main'                         # exit from 'service' mode
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = [
-  'layout floating tiling',
-  'mode main',
+    'layout floating tiling',
+    'mode main',
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
