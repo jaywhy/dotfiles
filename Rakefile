@@ -5,6 +5,7 @@ DOTFILES = %w[
   apps
   bat
   git
+  ghostty
   hammerspoon
   karabiner
   kitty
