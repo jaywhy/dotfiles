@@ -4,24 +4,6 @@ brew upgrade
 brew cleanup
 brew doctor
 
-# # asdf
-# asdf plugin update --all
-
-# asdf install nodejs latest
-# asdf global nodejs latest
-
-# asdf install ruby latest
-# asdf global ruby latest
-
-# KERN_BUILD_DOCS=yes asdf install erlang latest
-# asdf global erlang latest
-
-# asdf install elixir latest
-# asdf global elixir latest
-
-# asdf install python latest
-# asdf global python latest
-
 # mise
 mise upgrade
 
@@ -42,3 +24,6 @@ softwareupdate -i -a
 
 # github copilot
 gh extension upgrade gh-copilot
+
+# atuin
+atuin update
