@@ -1,9 +1,6 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Reload with omz reload
 export EDITOR=nvim
 export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:/Users/jason/Library/Application\ Support/JetBrains/Toolbox/scripts:$HOME/.docker/bin
-export PATH="$PATH:/Users/jason/.modular/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -23,8 +20,8 @@ alias lt3='ls --tree --level 3'
 alias lt4='ls --tree --level 4'
 alias ll='ls -alh'
 alias la='ls -la'
-alias j='z'
-alias cd='z'
+alias reload='omz reload'
+#alias cd='z'
 alias cat='bat'
 alias rm='trash'
 alias v='vim'
@@ -33,6 +30,15 @@ alias qc='q chat'
 alias ff='fzf --preview "bat --style=numbers --color=always {}"'
 alias fo='fzf --preview "bat --style=numbers --color=always {}" --bind "enter:execute(NVIM_APPNAM=LazyVim nvim {})"'
 alias lg='lazygit'
+
+
+
+# cd and ls
+autoload -U add-zsh-hook
+_chpwd_auto_ls() {
+  ls
+}
+add-zsh-hook chpwd _chpwd_auto_ls
 
 # Configuration
 
@@ -85,14 +91,6 @@ fds() {
 
 fdc() {
     fda ~/code
-}
-
-fdo() {
-    fda ~/OneDrive
-}
-
-fdv() {
-    fda ~/OneDrive/NaturaLawn/File\ Cabinet/Vendors
 }
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.

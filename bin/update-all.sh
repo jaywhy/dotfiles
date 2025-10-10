@@ -26,4 +26,4 @@ softwareupdate -i -a
 gh extension upgrade gh-copilot
 
 # atuin
-atuin update
+#atuin update
