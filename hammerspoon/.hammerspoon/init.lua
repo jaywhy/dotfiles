@@ -1,26 +1,9 @@
-openMode = hs.hotkey.modal.new({}, nil)
+local hyper = { "ctrl", "alt", "cmd", "shift" }
+local hyper_minus_shift = { "ctrl", "alt", "cmd" }
 
-function openMode:entered()
-    hs.alert.show("Open Mode")
-end
-
-function openMode:exited()
-    hs.alert.closeAll()
-end
-
-openMode:bind({}, 't', function()
-    hs.application.launchOrFocus("iTerm")
-    openMode:exit()
-end)
-openMode:bind({}, 'c', function()
-    hs.application.launchOrFocus("Chrome")
-    openMode:exit()
-end)
-openMode:bind({}, 'f', function()
-    hs.application.launchOrFocus("Finder")
-    openMode:exit()
-end)
-
-hs.hotkey.bind({ 'ctrl', 'alt', 'cmd', 'shift' }, 'O', function()
-    openMode:enter()
+hs.hotkey.bind(hyper_minus_shift, "v", function()
+	local text = hs.pasteboard.getContents()
+	if text then
+		hs.eventtap.keyStrokes(text)
+	end
 end)

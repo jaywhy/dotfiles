@@ -4,24 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "PAGE_UP to Hyper minus shift",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "page_up",
-                                    "modifiers": {}
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_control", "left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "CAPS_LOCK to HYPER (SHIFT+COMMAND+OPTION+CONTROL) or ESCAPE (If Alone)",
                         "manipulators": [
                             {
@@ -98,6 +80,57 @@
                                         "repeat": true
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper Application",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "description": "cmd + c = Chrome",
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": ["left_command", "left_option", "left_shift", "left_control", "right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a Google\\ Chrome" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "cmd + t = Things",
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "mandatory": ["left_command", "left_option", "left_shift", "left_control", "right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a Things3" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "cmd + r = RubyMine",
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "mandatory": ["left_command", "left_option", "left_shift", "left_control", "right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a RubyMine" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "cmd + i = iTerm",
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "mandatory": ["left_command", "left_option", "left_shift", "left_control", "right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a iTerm" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "cmd + g = Gmail",
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "mandatory": ["left_command", "left_option", "left_shift", "left_control", "right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a Gmail" }],
                                 "type": "basic"
                             }
                         ]
