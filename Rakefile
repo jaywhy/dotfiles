@@ -1,14 +1,12 @@
 require "rake"
 
 DOTFILES = %w[
-  aerospace
   apps
   bat
   git
   ghostty
   hammerspoon
   karabiner
-  kitty
   nvim
   tmux
   vim
