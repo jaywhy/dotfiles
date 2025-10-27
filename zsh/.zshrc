@@ -30,6 +30,7 @@ alias qc='q chat'
 alias ff='fzf --preview "bat --style=numbers --color=always {}"'
 alias fo='fzf --preview "bat --style=numbers --color=always {}" --bind "enter:execute(NVIM_APPNAM=LazyVim nvim {})"'
 alias lg='lazygit'
+alias df='echo "Using duf instead of df..." && duf'
 
 
 
@@ -55,7 +56,7 @@ eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
 
 # atuin
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # yazi
 function y() {
