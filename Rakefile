@@ -8,6 +8,7 @@ DOTFILES = %w[
   hammerspoon
   karabiner
   nvim
+  restic
   tmux
   vim
   yazi
