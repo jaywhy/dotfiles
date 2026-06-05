@@ -4,26 +4,31 @@ brew upgrade
 brew cleanup
 brew doctor
 
-# mise
 mise upgrade
+mise prune
 
-# Elixir
 mix local.hex
 mix archive.install hex phx_new
 
-# Ruby
 gem update
-# gem cleanup
 gem update --system
 
-# Zsh
+rustup update
+
+nvim --headless -c 'Lazy update' -c 'qa'
+
 zsh ~/.oh-my-zsh/tools/upgrade.sh
 
-# macOS
+mas upgrade
 softwareupdate -i -a
 
-# github copilot
 gh extension upgrade gh-copilot
+gh extension upgrade --all
 
-# atuin
 #atuin update
+
+code --update-extensions
+
+pip install --upgrade pip
+
+npm update -g

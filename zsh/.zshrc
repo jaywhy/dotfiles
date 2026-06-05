@@ -1,16 +1,9 @@
-# Reload with omz reload
 export EDITOR=nvim
 export PATH=$HOME/.bin:$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:/Users/jason/Library/Application\ Support/JetBrains/Toolbox/scripts:$HOME/.docker/bin
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=""
-
-plugins=(
-  bundler colored-man-pages git mix ruby rails you-should-use zsh-syntax-highlighting zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # Aliases
 alias ls='eza --group-directories-first --icons --color=always'
@@ -20,21 +13,22 @@ alias lt3='ls --tree --level 3'
 alias lt4='ls --tree --level 4'
 alias ll='ls -alh'
 alias la='ls -la'
-alias reload='omz reload'
+alias reload='source ~/.zshrc'
 alias cd='z'
 alias cat='bat'
 alias rm='trash'
 alias v='vim'
 alias n='nvim'
-alias qc='q chat'
 alias ff='fzf --preview "bat --style=numbers --color=always {}"'
 alias fo='fzf --preview "bat --style=numbers --color=always {}" --bind "enter:execute(NVIM_APPNAM=LazyVim nvim {})"'
 alias lg='lazygit'
 alias df='echo "Using duf instead of df..." && duf'
 
+# homebrew
+export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
 
 
-# cd and ls
+# when changing directories immediately run an ls
 autoload -U add-zsh-hook
 _chpwd_auto_ls() {
   ls
@@ -55,47 +49,11 @@ eval "$(starship init zsh)"
 #mise
 eval "$(mise activate zsh)"
 
-# atuin
-eval "$(atuin init zsh --disable-up-arrow)"
-
-# yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-fda() {
-    local base_dir="${1:-/Users/jason}"
-    local dir
-    dir=$(fd --type d --exclude 'node_modules' . $base_dir | fzf --preview 'ls -la {}' --border)
-    if [ -n "$dir" ]; then
-        cd "$dir" || echo "Failed to navigate to $dir"
-    else
-        echo "No directory selected"
-    fi
-}
-
-fds() {
-    local base_dir="${1}"
-    local dir
-    dir=$(fd --type d --hidden --exclude 'node_modules' . $base_dir | fzf --preview 'ls -la {}' --border)
-    if [ -n "$dir" ]; then
-        echo "$dir"
-    else
-        echo "No directory selected"
-    fi
-}
-
-fdc() {
-    fda ~/code
-}
-
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/jason/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# opencode
+export PATH=/Users/jason/.opencode/bin:$PATH
