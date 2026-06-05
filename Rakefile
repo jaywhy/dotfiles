@@ -5,10 +5,7 @@ DOTFILES = %w[
   bat
   git
   ghostty
-  hammerspoon
-  karabiner
   nvim
-  restic
   tmux
   vim
   yazi
