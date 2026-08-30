@@ -1,24 +1,35 @@
 require "rake"
 
-DOTFILES = %w[
+COMMON = %w[
   apps
   bat
   git
-  ghostty
-  hypr
   local
-  omarchy
   nvim
   tmux
   vim
   yazi
   zellij
+].freeze
+
+LINUX = %w[
+  ghostty
+  hypr
+  omarchy
+].freeze
+
+MACOS = %w[
+  raycast
   zsh
 ].freeze
 
+def macos? = RUBY_PLATFORM.include?("darwin")
+
+def dotfiles = COMMON + (macos? ? MACOS : LINUX)
+
 desc "Install the dotfiles into home directory using GNU stow"
 task :install do
-  DOTFILES.each { stow(it) }
+  dotfiles.each { stow(it) }
 end
 
 def stow(app)
