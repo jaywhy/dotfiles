@@ -5,6 +5,9 @@ DOTFILES = %w[
   bat
   git
   ghostty
+  hypr
+  local
+  omarchy
   nvim
   tmux
   vim

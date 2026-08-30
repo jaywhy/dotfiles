@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# fix-epub — repackage an exploded EPUB folder back into a valid .epub file.
+#
+# macOS Books (and some archive tools) unzip an .epub into a folder. This
+# rebuilds it as a spec-correct zip: the `mimetype` entry must be first and
+# stored uncompressed, everything else deflated.
+#
+# Usage: fix-epub <exploded-epub-folder>
+#   Writes <name>.epub and renames the original folder to
+#   <name>.epub.folder-backup
+
+set -euo pipefail
+
+src="${1:?usage: fix-epub <exploded-epub-folder>}"
+src="${src%/}"
+
+[ -d "$src" ]            || { echo "fix-epub: '$src' is not a directory" >&2; exit 1; }
+[ -f "$src/mimetype" ]   || { echo "fix-epub: no mimetype in '$src' — not an EPUB folder" >&2; exit 1; }
+
+case "$src" in
+  *.epub) out="$src" ;;
+  *)      out="$src.epub" ;;
+esac
+
+tmp="$(mktemp -u "${TMPDIR:-/tmp}/fix-epub.XXXXXX").epub"
+trap 'rm -f "$tmp"' EXIT
+
+( cd "$src"
+  zip -X -0 "$tmp" mimetype >/dev/null
+  zip -X -r9 "$tmp" . \
+      -x mimetype '*.DS_Store' '.DS_Store' \
+         'iTunesMetadata*.plist' '__MACOSX/*' '._*' >/dev/null )
+
+python3 - "$tmp" <<'EOF'
+import sys, zipfile
+z = zipfile.ZipFile(sys.argv[1])
+entries = z.infolist()
+if entries[0].filename != "mimetype" or entries[0].compress_type != zipfile.ZIP_STORED:
+    sys.exit("fix-epub: mimetype is not the first, stored entry")
+bad = z.testzip()
+if bad is not None:
+    sys.exit(f"fix-epub: corrupt entry: {bad}")
+print(f"fix-epub: ok — {len(entries)} entries")
+EOF
+
+if [ -e "$out" ] && [ "$out" != "$src" ]; then
+    echo "fix-epub: refusing to overwrite existing '$out'" >&2
+    exit 1
+fi
+
+backup="$src.folder-backup"
+[ -e "$backup" ] && { echo "fix-epub: '$backup' already exists" >&2; exit 1; }
+
+mv "$src" "$backup"
+mv "$tmp" "$out"
+trap - EXIT
+
+echo "fix-epub: wrote $out"
+echo "fix-epub: original folder kept at $backup"
