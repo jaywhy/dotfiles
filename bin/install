@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 
 common=(apps bat git local nvim tmux yazi)
 linux=(ghostty hypr omarchy zsh-linux)
-macos=(nvim-mac raycast zsh)
+macos=(flashspace nvim-mac raycast zsh)
 
 packages=("${common[@]}")
 case "$(uname -s)" in

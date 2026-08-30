@@ -1,0 +1,92 @@
+{
+  "profiles" : [
+    {
+      "id" : "4CAE07C4-5D25-4AF5-A481-8F4D432698FF",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "apps" : [
+
+          ],
+          "assignAppShortcut" : "ctrl+shift+1",
+          "display" : "LG ULTRAWIDE",
+          "id" : "224050B8-DF77-43AF-B33F-592CB3FBBB4C",
+          "name" : "General",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+1",
+          "symbolIconName" : "apple.logo"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.microsoft.VSCode",
+              "iconPath" : "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns",
+              "name" : "Code"
+            },
+            {
+              "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+              "iconPath" : "/Applications/Cursor.app/Contents/Resources/Cursor.icns",
+              "name" : "Cursor"
+            },
+            {
+              "bundleIdentifier" : "com.googlecode.iterm2",
+              "iconPath" : "/Applications/iTerm.app/Contents/Resources/iTerm2 App Icon for Release.icns",
+              "name" : "iTerm2"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+2",
+          "display" : "LG ULTRAWIDE",
+          "id" : "710D8133-DC46-4F7F-8BCC-DB4704CA13C9",
+          "name" : "Code",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+2",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "autoOpen" : true,
+              "bundleIdentifier" : "com.hnc.DiscordCanary",
+              "iconPath" : "/Applications/Discord Canary.app/Contents/Resources/electron.icns",
+              "name" : "Discord Canary"
+            },
+            {
+              "autoOpen" : true,
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+3",
+          "display" : "LG ULTRAWIDE",
+          "id" : "EF815270-4BE7-4937-8582-F2B53C29C256",
+          "name" : "Messaging",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+3",
+          "symbolIconName" : "message"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.spotify.client",
+            "iconPath" : "/Applications/Spotify.app/Contents/Resources/AppIcon.icns",
+            "name" : "Spotify"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.spotify.client",
+              "iconPath" : "/Applications/Spotify.app/Contents/Resources/AppIcon.icns",
+              "name" : "Spotify"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+4",
+          "display" : "LG ULTRAWIDE",
+          "id" : "0BDA19E3-D288-414A-88BF-493C87DCB16F",
+          "name" : "Music",
+          "openAppsOnActivation" : true,
+          "shortcut" : "opt+4",
+          "symbolIconName" : "music.note"
+        }
+      ]
+    }
+  ]
+}
