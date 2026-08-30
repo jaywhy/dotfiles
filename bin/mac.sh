@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+# macOS preferences. Run after ./bin/install. Re-runnable.
+set -eu
+
 # Hide menu bar
 #defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
