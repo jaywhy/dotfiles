@@ -1,0 +1,18 @@
+# Personal zsh overrides for Omarchy (omarchy-zsh owns ~/.zshrc).
+# Sourced after /usr/share/omarchy-zsh/shell/all, so these win.
+
+# eza: plain grid listing instead of omarchy-zsh's `-lh` long default
+alias ls='eza --group-directories-first --icons --color=always'
+alias tree='ls --tree'
+alias lt='ls --tree --level 2'
+alias lt3='ls --tree --level 3'
+alias lt4='ls --tree --level 4'
+alias ll='ls -alh'
+alias la='ls -la'
+
+# ls a directory automatically after cd'ing into it
+autoload -Uz add-zsh-hook
+_chpwd_auto_ls() {
+  ls
+}
+add-zsh-hook chpwd _chpwd_auto_ls

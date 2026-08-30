@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Symlink the dotfiles into $HOME with GNU stow. Picks packages by OS.
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+common=(apps bat git local nvim tmux vim yazi)
+linux=(ghostty hypr omarchy zsh-linux)
+macos=(raycast zsh)
+
+packages=("${common[@]}")
+case "$(uname -s)" in
+  Darwin) packages+=("${macos[@]}") ;;
+  *)      packages+=("${linux[@]}") ;;
+esac
+
+for pkg in "${packages[@]}"; do
+  echo "stow --ignore=DS_Store -t $HOME $pkg"
+  stow --ignore=DS_Store -t "$HOME" "$pkg"
+done
