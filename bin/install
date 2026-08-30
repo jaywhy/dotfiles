@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-common=(apps bat git local nvim tmux vim yazi)
+common=(apps bat git local nvim tmux yazi)
 linux=(ghostty hypr omarchy zsh-linux)
 macos=(raycast zsh)
 
