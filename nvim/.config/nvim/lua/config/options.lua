@@ -1,5 +1,9 @@
 -- Options are automatically loaded before lazy.nvim startup.
-require("config.remote_clipboard").setup()
+-- remote_clipboard is provided by omarchy-nvim on Linux; absent on macOS.
+local ok, remote_clipboard = pcall(require, "config.remote_clipboard")
+if ok then
+  remote_clipboard.setup()
+end
 
 vim.opt.relativenumber = false
 vim.g.autoformat = false
