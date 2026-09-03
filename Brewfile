@@ -7,7 +7,8 @@ tap "minio/stable"
 tap "nailuogg/recoll", "https://github.com/nailuoGG/homebrew-recoll"
 tap "nikitabobko/tap"
 tap "sst/tap", "https://github.com/anomalyco/homebrew-tap.git"
-tap "tg44/heptapod"
+# Automatically exclude development dependencies from Time Machine backups
+brew "asimov", restart_service: :changed
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -22,6 +23,10 @@ brew "glib"
 brew "cairo"
 # Cross-platform make
 brew "cmake"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Reimplementation of ctags(1)
@@ -30,6 +35,8 @@ brew "ctags"
 brew "curl"
 # Library and utilities for processing GIFs
 brew "giflib"
+# TIFF library and utilities
+brew "libtiff"
 # File comparison utilities
 brew "diffutils"
 # Pack, ship and run any application as a lightweight container
@@ -86,8 +93,6 @@ brew "gnu-sed"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
 # Improved top (interactive process viewer)
@@ -176,8 +181,6 @@ brew "rclone"
 brew "ripgrep"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Safe, concurrent, practical language
@@ -186,8 +189,6 @@ brew "rust"
 brew "sd"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Command driven spotify player
-brew "spotify_player"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -202,6 +203,8 @@ brew "tokei"
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Internet file retriever
@@ -214,8 +217,6 @@ brew "wxwidgets"
 brew "yarn"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Pluggable terminal workspace, with terminal multiplexer as the base feature
-brew "zellij"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
 # Shell extension to navigate your filesystem faster
@@ -236,6 +237,8 @@ brew "heroku/brew/heroku"
 brew "heroku/brew/heroku-node"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Tools for building Android applications
+cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
@@ -248,6 +251,8 @@ cask "dupeguru"
 cask "expo-orbit"
 # Web browser
 cask "firefox"
+# Virtual workspace manager
+cask "flashspace"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-symbols-only-nerd-font"
@@ -289,16 +294,13 @@ cask "vlc"
 cask "vorssaint"
 mas "Apple Configurator", id: 1037126344
 mas "DaisyDisk 2", id: 411643860
-mas "Final Cut Pro", id: 424389933
 mas "Key Codes", id: 414568915
 mas "Keynote", id: 361285480
 mas "Kindle", id: 302584613
 mas "LanScan", id: 472226235
 mas "Microsoft OneNote", id: 784801555
-mas "Motion", id: 434290957
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
-mas "Pixelmator Pro", id: 6746662575
 mas "Prime Video", id: 545519333
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696

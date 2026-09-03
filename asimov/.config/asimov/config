@@ -1,0 +1,36 @@
+# Asimov — exclude dev dependencies from Time Machine. https://github.com/AsimovMac/asimov
+
+[scan]
+# extra = /opt/homebrew/var/www
+
+[sentinels]
+# extra = generated codegen.yml
+
+[fixed_dirs]
+enabled = true
+
+extra = ~/.cargo/registry
+extra = ~/.cargo/git
+extra = ~/.rustup/toolchains
+extra = ~/.bun/install/cache
+extra = ~/Library/pnpm/store
+extra = ~/.local/share/mise
+extra = ~/Library/Application Support/Spotify/PersistentCache
+
+extra = ~/Library/Application Support/com.apple.wallpaper/aerials
+extra = ~/Library/Containers/com.apple.wallpaper.agent
+extra = ~/Library/Containers/com.apple.wallpaper.extension.aerials
+
+extra = /Library/Backblaze.bzpkg/bzdata
+
+extra = ~/Library/Containers/com.docker.docker/Data/vms
+
+extra = ~/Library/Developer/Xcode/DerivedData
+extra = ~/Library/Developer/Xcode/iOS DeviceSupport
+extra = ~/Library/Developer/CoreSimulator/Caches
+extra = ~/Library/Developer/CoreSimulator/Devices
+
+[skip_paths]
+extra = ~/.Trash
+extra = ~/Pictures
+extra = ~/Library/Application Support/Steam

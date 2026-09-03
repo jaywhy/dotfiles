@@ -6,7 +6,11 @@
       "workspaces" : [
         {
           "apps" : [
-
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            }
           ],
           "assignAppShortcut" : "ctrl+shift+1",
           "display" : "LG ULTRAWIDE",
@@ -32,6 +36,11 @@
               "bundleIdentifier" : "com.googlecode.iterm2",
               "iconPath" : "/Applications/iTerm.app/Contents/Resources/iTerm2 App Icon for Release.icns",
               "name" : "iTerm2"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
             }
           ],
           "assignAppShortcut" : "opt+shift+2",
@@ -85,6 +94,32 @@
           "openAppsOnActivation" : true,
           "shortcut" : "opt+4",
           "symbolIconName" : "music.note"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "abnerworks.Typora",
+              "iconPath" : "/Applications/Typora.app/Contents/Resources/AppIcon.icns",
+              "name" : "Typora"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+5",
+          "display" : "LG ULTRAGEAR+",
+          "id" : "A2B0E72A-5EE4-49CF-B032-D1EAA8A79606",
+          "name" : "Writing",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+5",
+          "symbolIconName" : "pencil"
         }
       ]
     }

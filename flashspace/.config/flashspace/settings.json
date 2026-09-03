@@ -20,6 +20,13 @@
   "enableSwipeGestures" : true,
   "enableWorkspaceSwitcher" : true,
   "enableWorkspaceTransitions" : false,
+  "floatingApps" : [
+    {
+      "bundleIdentifier" : "com.apple.finder",
+      "iconPath" : "/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.icns",
+      "name" : "Finder"
+    }
+  ],
   "focusFrontmostWindow" : false,
   "focusLeft" : "cmd+ctrl+opt+left",
   "focusRight" : "cmd+ctrl+opt+right",

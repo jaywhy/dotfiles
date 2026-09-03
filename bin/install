@@ -5,8 +5,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 common=(apps bat git local nvim tmux yazi)
-linux=(ghostty hypr omarchy zsh-linux)
-macos=(flashspace nvim-mac raycast zsh)
+linux=(hypr omarchy zsh-linux)
+macos=(ghostty flashspace nvim-mac raycast zsh)
 
 packages=("${common[@]}")
 case "$(uname -s)" in
