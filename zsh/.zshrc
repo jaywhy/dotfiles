@@ -1,9 +1,31 @@
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:./node_modules/.bin:$HOME/.docker/bin
 
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
+# opencode
+export PATH=/Users/jason/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jason/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# homebrew
+export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
+
+# zsh-defer: run non-essential init after the first prompt paints
+# install: git clone https://github.com/romkatv/zsh-defer ~/.zsh-defer
+source ~/.zsh-defer/zsh-defer.plugin.zsh
+
+# ---------------------------------------------------------------------------
+# Synchronous: prompt + anything likely to be the first command typed
+# ---------------------------------------------------------------------------
+
+# starship (deferring it would show a bare prompt that redraws)
+eval "$(starship init zsh)"
+
+# zoxide (`cd` is aliased to `z`, so `z` must exist immediately)
+eval "$(zoxide init zsh)"
+
+zstyle ':completion:*' menu select
 
 # Aliases
 alias ls='eza --group-directories-first --icons --color=always'
@@ -27,10 +49,6 @@ alias fo='fzf --preview "bat --style=numbers --color=always {}" --bind "enter:ex
 alias lg='lazygit'
 alias df='echo "Using duf instead of df..." && duf'
 
-# homebrew
-export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
-
-
 # when changing directories immediately run an ls
 autoload -U add-zsh-hook
 _chpwd_auto_ls() {
@@ -38,25 +56,25 @@ _chpwd_auto_ls() {
 }
 add-zsh-hook chpwd _chpwd_auto_ls
 
-# Configuration
+# ---------------------------------------------------------------------------
+# Deferred: everything below runs just after the first prompt is drawn.
+# For ~50ms after the prompt appears, tab-completion / Ctrl-R / syntax
+# highlighting aren't wired up yet.
+# ---------------------------------------------------------------------------
+
+# completions (+ Docker CLI completions dir)
+zsh-defer -c 'fpath=(/Users/jason/.docker/completions $fpath); autoload -Uz compinit; compinit'
+
+# mise
+zsh-defer -c 'eval "$(mise activate zsh)"'
+
+# atuin
+zsh-defer -c 'eval "$(atuin init zsh)"'
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zsh-defer -c '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
 
-# zoxide
-eval "$(zoxide init zsh)"
-
-# starship
-eval "$(starship init zsh)"
-
-#mise
-eval "$(mise activate zsh)"
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/jason/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-# opencode
-export PATH=/Users/jason/.opencode/bin:$PATH
+# zsh plugins from homebrew (syntax-highlighting must be sourced last)
+zsh-defer source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+zsh-defer source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
+zsh-defer source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
