@@ -25,10 +25,8 @@ eval "$(starship init zsh)"
 # zoxide (`cd` is aliased to `z`, so `z` must exist immediately)
 eval "$(zoxide init zsh)"
 
-# completion menu: arrow-key grid + colors
+# completion menu: arrow-key grid + colored section headers
 zstyle ':completion:*' menu select
-export LS_COLORS='di=1;34:ln=1;36:so=1;35:pi=33:ex=1;32:bd=1;33:cd=1;33:su=37;41:sg=30;43:tw=30;42:ow=34;42:or=31;1:mi=1;31'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:descriptions' format '%F{yellow}%B%d%b%f'
 zstyle ':completion:*:warnings'     format '%F{red}no matches%f'
 
@@ -70,14 +68,14 @@ add-zsh-hook chpwd _chpwd_auto_ls
 # completions (+ Docker CLI completions dir)
 zsh-defer -c 'fpath=(/Users/jason/.docker/completions $fpath); autoload -Uz compinit; compinit'
 
+# LS_COLORS (vivid) + colored completion listing (zstyle captures $LS_COLORS at eval time)
+zsh-defer -c 'export LS_COLORS="$(vivid generate catppuccin-mocha)"; zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+
 # mise
 zsh-defer -c 'eval "$(mise activate zsh)"'
 
 # atuin
 zsh-defer -c 'eval "$(atuin init zsh)"'
-
-# fzf
-zsh-defer -c '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
 
 # zsh plugins from homebrew (syntax-highlighting must be sourced last)
 zsh-defer source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
