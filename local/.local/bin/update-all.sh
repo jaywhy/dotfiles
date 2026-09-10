@@ -17,15 +17,13 @@ rustup update
 
 nvim --headless -c 'Lazy update' -c 'qa'
 
-zsh ~/.oh-my-zsh/tools/upgrade.sh
-
 mas upgrade
 softwareupdate -i -a
 
 gh extension upgrade gh-copilot
 gh extension upgrade --all
 
-#atuin update
+atuin update
 
 code --update-extensions
 
