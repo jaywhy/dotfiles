@@ -8,9 +8,6 @@ export PATH=/Users/jason/.opencode/bin:$PATH
 export PATH="$PATH:/Users/jason/.lmstudio/bin"
 # End of LM Studio CLI section
 
-# homebrew
-export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
-
 # zsh-defer: run non-essential init after the first prompt paints
 # install: git clone https://github.com/romkatv/zsh-defer ~/.zsh-defer
 source ~/.zsh-defer/zsh-defer.plugin.zsh
