@@ -49,8 +49,6 @@ brew "gnu-sed"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
 # Review-first terminal diff viewer for agent-authored changesets
@@ -95,8 +93,6 @@ brew "mpv"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
 # Adds an OCR text layer to scanned PDF files
 brew "ocrmypdf"
 # Package compiler and linker metadata toolkit
@@ -105,8 +101,6 @@ brew "pkgconf"
 brew "ripgrep"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Safe, concurrent, practical language
-brew "rust"
 # Secure Reliable Transport
 brew "srt"
 # Cross-shell prompt for astronauts
@@ -129,8 +123,6 @@ brew "wget"
 brew "yarn"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Programming language designed for robustness, optimality, and clarity
-brew "zig"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -265,10 +257,5 @@ mas "Prime Video", id: 545519333
 mas "Reeder", id: 1529448980
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
-go "golang.org/x/tools/gopls"
-go "honnef.co/go/tools/cmd/staticcheck"
-npm "@github/copilot"
-npm "@githubnext/github-copilot-cli"
-npm "@ticktick/ticktick-cli"
-npm "corepack"
-npm "openclaw"
+go "cmd/go"
+go "cmd/gofmt"

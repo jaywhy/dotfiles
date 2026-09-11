@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 
 common=(apps atuin bat claude git local yazi)
 linux=(hypr)
-macos=(asimov ghostty flashspace nvim raycast zsh)
+macos=(asimov ghostty flashspace mise nvim raycast zsh)
 
 packages=("${common[@]}")
 case "$(uname -s)" in
