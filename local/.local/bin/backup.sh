@@ -1,6 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# ~/Documents is synced to the Synology via Syncthing
 BACKUP_ROOT="$HOME/Documents/Backup"
 mkdir -p "$BACKUP_ROOT"
 

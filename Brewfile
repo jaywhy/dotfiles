@@ -107,8 +107,6 @@ brew "srt"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Open source continuous file synchronization application
-brew "syncthing", restart_service: :changed
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
@@ -153,6 +151,10 @@ cask "balenaetcher"
 cask "brave-browser"
 # Screen capturing tool
 cask "cleanshot"
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Claude code parallelisation
 cask "conductor"
 # Disk space visualiser
@@ -171,8 +173,6 @@ cask "expo-orbit"
 cask "fastmail"
 # Web browser
 cask "firefox"
-# Virtual workspace manager
-cask "flashspace"
 # Offline voice-to-text dictation app with AI enhancement
 cask "fluidvoice"
 cask "font-fira-code-nerd-font"
@@ -230,6 +230,8 @@ cask "selfcontrol"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Minimal GUI for AI code agents
+cask "t3-code"
 # Menu bar manager
 cask "thaw"
 # Unpacks archive files

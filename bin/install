@@ -4,9 +4,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-common=(apps atuin bat claude git local yazi)
+common=(apps atuin bat git local yazi)
 linux=(hypr)
-macos=(asimov ghostty flashspace mise nvim raycast zsh)
+macos=(asimov ghostty mise nvim raycast zsh)
 
 packages=("${common[@]}")
 case "$(uname -s)" in
